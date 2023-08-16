@@ -51,6 +51,8 @@ h1 {
 
 .photographer_section article a  {
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -78,11 +80,10 @@ h1 {
 .photographer_section article img {
     height: 225px;
     width: 225px;
-    border: 1px solid white;
     border-radius: 50% ;
     object-fit: cover;
-    
-    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin: auto;
 }
 
 .lien_logo{

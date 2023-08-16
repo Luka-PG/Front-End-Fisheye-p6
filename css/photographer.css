@@ -6,6 +6,35 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 60px 20px 60px;
+    
+    align-items: center;
+}
+
+.photograph-header img{
+    height: 225px;
+    width: 225px;
+    border-radius: 50% ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    object-fit: cover;
+
+}
+.photograph-header .description h1{
+    font-size: 65px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    color: #D3573c;
+}
+
+.photograph-header .description h2{
+    padding: 0;
+    margin:0;
+    font-weight: normal;
+    color: #901c1c;
 }
 
 .contact_button {
@@ -19,6 +48,11 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.contact_button:hover{
+    background-color: #d3573c;
+    color: black;
 }
 
 .modal {
