@@ -49,8 +49,8 @@ function photographerTemplate(data) {
       description.setAttribute("class", 'description')
 
       const names = document.createElement( 'h1' );
-      names.textContent = name.split(' ');
-  
+      names.textContent = name
+   
       const cities = document.createElement( 'h2' )
       cities.textContent = city + ', ' + country;
   

@@ -1,24 +1,26 @@
+   async function displayCurrentPhotographer() {
 
+    const {photographer} = await getCurrentPhotographer()
 
-  async function getPhotographersById() {
-
-    const { photographers } = await getPhotographersData();
-    const params = (new URL(document.location).searchParams);
-    const id = parseInt(params.get("id"));
-  
-    const photographer = photographers.find(photographers => photographers.id === id);
-    const headerSection = document.querySelector (".photograph-header");
     const photographerHeader =  photographerTemplate(photographer);
     const photographerHeaderCard = photographerHeader.headerCard ();
-
-    headerSection.appendChild(photographerHeaderCard);
 
     return photographerHeaderCard
   }
   
+  async function displayMedia (){
+    const { media } = await getPhotographersData();
+    const { currentPhotographerid } = await getCurrentPhotographer();
 
-  console.log (getPhotographersById())
+    const sortedMedia = media.filter(media => media.photographerId === currentPhotographerid)
 
+        console.log(sortedMedia)
 
+  }
 
+function init () {
+  displayCurrentPhotographer()
+  displayMedia()
+}
 
+init();

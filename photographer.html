@@ -10,7 +10,7 @@
   <body>
     <header>
       <a href="index.html" class="lien_logo">
-        <img src="assets/images/logo.png" class="logo" />
+        <img src="assets/images/logo.png" class="logo" alt="logo Fisheye" />
       </a>
       </header>
     <main id="main">
@@ -23,17 +23,24 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt "close" />
         </header>
 				<form>
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input aria-label="Prénom" />
+            <label>Nom</label>
+            <input aria-label="Nom" />
+            <label>Email</label>
+            <input aria-label="Email" />
+            <label>Votre message</label>
+            <input aria-label="Votre message" />
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
+    <script src="./scripts/components/mediaCards.js"></script>
     <script src="./scripts/components/photographerCards.js"></script>
     <script src="/scripts/utils/fetchData.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
