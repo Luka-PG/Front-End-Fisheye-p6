@@ -124,7 +124,15 @@ body::-webkit-scrollbar{
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
+    
+
+    position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 30px auto 30px auto;
+    
 }
 
 .modal header {
@@ -140,6 +148,10 @@ body::-webkit-scrollbar{
     font-size: 64px;
     font-weight: normal;
     text-align: center;
+}
+
+.modal .message-input {
+    height: 250px;
 }
 
 form {
