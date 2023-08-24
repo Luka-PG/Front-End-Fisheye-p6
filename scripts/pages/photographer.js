@@ -16,6 +16,11 @@
 
         console.log(sortedMedia)
 
+        sortedMedia.forEach((sortedMedia) => {
+          const galleryModel = galleryTemplate(sortedMedia);
+          return galleryModel
+        });
+       
   }
 
 function init () {
