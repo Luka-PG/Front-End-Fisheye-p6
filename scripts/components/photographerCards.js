@@ -11,32 +11,32 @@ function photographerTemplate(data) {
         const article = document.createElement( 'article' );
         article.setAttribute( "href", id )
 
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        img.setAttribute("alt", name)
+            const img = document.createElement( 'img' );
+              img.setAttribute("src", picture)
+              img.setAttribute("alt", name)
 
-        const a = document.createElement('a')
-        a.setAttribute('href', './photographer.html' + `?id=${id}`)
-        a.setAttribute("aria-label", `lien vers le portfolio de ${name}`);
+          const a = document.createElement('a')
+            a.setAttribute('href', './photographer.html' + `?id=${id}`)
+            a.setAttribute("aria-label", `lien vers le portfolio de ${name}`);
 
-        const names = document.createElement( 'h2' );
-        names.textContent = name;
+            const names = document.createElement( 'h2' );
+              names.textContent = name;
 
-        const cities = document.createElement( 'h3' )
-        cities.textContent = city + ', ' + country;
+            const cities = document.createElement( 'h3' )
+              cities.textContent = city + ', ' + country;
 
-        const taglines = document.createElement( 'h4' )
-        taglines.textContent = tagline;
+            const taglines = document.createElement( 'h4' )
+              taglines.textContent = tagline;
 
-        const prices = document.createElement( 'p' )
-        prices.textContent = price + '€/jour'
+            const prices = document.createElement( 'p' )
+              prices.textContent = price + '€/jour'
 
         article.appendChild(a)
-        a.appendChild(img);
-        a.appendChild(names);
-        article.appendChild(cities);
-        article.appendChild(taglines);
-        article.appendChild(prices);
+          a.appendChild(img);
+          a.appendChild(names);
+            article.appendChild(cities);
+            article.appendChild(taglines);
+            article.appendChild(prices);
 
         return (article);
     }
@@ -45,32 +45,32 @@ function photographerTemplate(data) {
  
       const article = document.querySelector( '.photograph-header' );
      
-      const description = document.createElement('div')
-      description.setAttribute("class", 'description')
+        const description = document.createElement('div')
+          description.setAttribute("class", 'description')
 
-      const names = document.createElement( 'h1' );
-      names.textContent = name
+        const names = document.createElement( 'h1' );
+          names.textContent = name
    
-      const cities = document.createElement( 'h2' )
-      cities.textContent = city + ', ' + country;
+        const cities = document.createElement( 'h2' )
+          cities.textContent = city + ', ' + country;
   
-      const taglines = document.createElement( 'p' )
-      taglines.textContent = tagline;
+        const taglines = document.createElement( 'p' )
+          taglines.textContent = tagline;
   
-      const contactButton = document.createElement ( 'button' )
-      contactButton.textContent = 'Contactez-moi';
-      contactButton.setAttribute("aria-label", `Contacter ${name}`);
-      contactButton.setAttribute("class", 'contact_button')
-      contactButton.setAttribute ("onclick", "displayModal()")
+        const contactButton = document.createElement ( 'button' )
+          contactButton.textContent = 'Contactez-moi';
+          contactButton.setAttribute("aria-label", `Contacter ${name}`);
+          contactButton.setAttribute("class", 'contact_button')
+          contactButton.setAttribute ("onclick", "displayModal()")
   
-      const img = document.createElement( 'img' );
-      img.setAttribute("src", picture)
-      img.setAttribute("alt", name)
+        const img = document.createElement( 'img' );
+          img.setAttribute("src", picture)
+          img.setAttribute("alt", name)
       
       article.appendChild(description)
-      description.appendChild(names)
-      description.appendChild(cities)
-      description.appendChild(taglines)
+        description.appendChild(names)
+        description.appendChild(cities)
+        description.appendChild(taglines)
       article.appendChild(contactButton);
       article.appendChild(img)
   

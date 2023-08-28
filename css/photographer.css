@@ -114,6 +114,15 @@ body::-webkit-scrollbar{
     height: 20px !important;
 }
 
+.mediaCard .videoIcon{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    opacity: 80%;
+    background-color: grey ;
+    border-radius: 50px;
+    margin: 115px 125px 115px 125px !important;
+}
 
 .modal {
     border-radius: 5px;
@@ -124,15 +133,12 @@ body::-webkit-scrollbar{
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    
-
     position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: 30px auto 30px auto;
-    
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 30px auto 30px auto;    
 }
 
 .modal header {
