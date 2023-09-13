@@ -5,7 +5,6 @@ body {
     margin: 0;
 }
 
-
 header {
     display: flex;
     flex-direction: row;
@@ -21,6 +20,8 @@ h1 {
 
 .logo {
     height: 50px;
+    padding: 0;
+    margin: 0;
     margin-left: 100px;
 }
 
@@ -55,7 +56,6 @@ h1 {
     flex-direction: column;
 }
 
-
 .photographer_section article h3 {
     font-size: 16px;
     padding: 0;
@@ -84,9 +84,4 @@ h1 {
     object-fit: cover;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     margin: auto;
-}
-
-.lien_logo{
-    padding: 0;
-    margin: 0;
 }

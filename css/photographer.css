@@ -1,9 +1,14 @@
-#contact_modal {
+body::-webkit-scrollbar{
     display: none;
 }
 
-body::-webkit-scrollbar{
-    display: none;
+.lien-logo{
+  margin-left: 100px;
+  height: 50px;
+}
+
+.lien-logo img{
+  margin-left: 0;
 }
 
 .photograph-header {
@@ -41,7 +46,7 @@ body::-webkit-scrollbar{
     color: #901c1c;
 }
 
-.contact_button {
+.contact-button {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -54,25 +59,25 @@ body::-webkit-scrollbar{
     cursor: pointer;
 }
 
-.contact_button:hover{
+.contact-button:hover{
     background-color: #d3573c;
     color: black;
 }
 
 .media-section{
-    margin: 40px 100px 100px 100px;
+    margin: 40px 100px 130px 100px;
     display: flex;
     flex-wrap: wrap;
     gap: 105px;
 }
 
-.mediaCard{
+.media-card{
     width: 350px;
     height: 330px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.mediaCard .cardInfo{
+.media-card .card-info{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,109 +85,383 @@ body::-webkit-scrollbar{
     margin: 8px 0px 0px 0px;
 }
 
-.mediaCard video {
+.media-video {
     width: 350px;
     height: 330px;
     object-fit: cover;
 }
 
-.cardInfo p{
+.card-info p{
     color: #901C1C;
     margin: 0;
 }
 
-.mediaCard img{
+.media-card img{
     width: 350px;
     height: 330px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.likeSection {
+.like-section {
     display: flex;
-    align-items: center;
     gap: 5px;
 }
 
-.likeButton {
+.like-button {
     height: 20px;
     width: 20px;
+    cursor: pointer;
 }
 
-.likeIcon  {
+.like-icon  {
     width: 20px !important;
     height: 20px !important;
 }
 
-.mediaCard .videoIcon{
+.media-card .video-icon{
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     opacity: 80%;
     background-color: grey ;
     border-radius: 50px;
     margin: 115px 125px 115px 125px !important;
+    pointer-events: none;
 }
 
-.modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: 30px auto 30px auto;    
-}
-
-.modal header {
-    justify-content: space-between;
-    width: 100%;
-}
-
-.modal header img {
+.media-btn {
+    border: none;
     cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .media-btn:focus-visible {
+    outline: solid 2px #901C1C;
+  }
+
+.counter {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    align-items: center;
+    bottom: 0;
+    width: 20rem;
+    height: 4.5rem;
+    right: 10%;
+    background-color: #D3573C;
+    font-size: 1.3rem;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .counter-likes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .heart-icon-counter{
+    width: 25px;
+    height:18px;
+  }
+
+
+.contact-modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
-.modal header h2 {
-    font-size: 64px;
+.close-contact {
+    cursor: pointer;
+    color: black;
+    font-size: x-large;
+}
+
+.contact-modal header{
+  padding: 10px;
+}
+
+.contact-modal header h2 {
+    font-size: 35px;
     font-weight: normal;
     text-align: center;
+    margin: 0;
+  }
+
+.contact-modal fieldset {
+  position: relative;
+
+  border: none;  
 }
 
-.modal .message-input {
+.contact-modal .message-input {
     height: 250px;
+}
+
+.contact-modal .contact-button{
+  width: 140px;
+  height: 55px;
+  margin-left: 12px;
 }
 
 form {
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: flex-start;
+}
+
+form{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35%;
+    height: 70%;
+    border-radius: 8px;
+    background-color: #DB8876;
+    padding: 20px;
+    margin: 120px auto 80px auto;
 }
 
 form label {
     color: #312E2E;
-    font-size: 36px;
+    font-size: x-large;
 }
 
 form div {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: self-start;
     margin-bottom: 26px;
 }
 
 form input {
     width: 100%;
-    height: 68px;
+    height: 30px;
     border: none;
     border-radius: 5px;
+}
+
+.sort {
+  padding: 2rem 0 1rem 6rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.sort-select {
+  position: relative;
+  display: inline-block;
+  margin-left: 2rem;
+  padding: 0;
+  box-sizing: border-box;
+  width: 11rem;
+  background-color: #901C1C;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  text-align: start;
+  cursor: pointer;
+}
+.sort-select-open {
+  border-radius: 2rem;
+}
+
+.sort-button {
+  background-color: #901C1C;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  width: 11rem;
+  cursor: pointer;
+  text-align: start;
+  padding: 20px;
+  border: transparent;
+  
+}
+
+.sort-button:hover, .sort-button:focus,.sort-button:hover span, .sort-button:focus span {
+  color: black;
+    background-color: #D3573C;
+}
+
+.sort-optionBtn {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  width: 11rem;
+  cursor: pointer;
+  text-align: start;
+}
+.sort-optionBtn:hover, .sort-optionBtn:focus {
+  background-color: #D3573C;
+  color: black;
+}
+.sort span {
+  position: absolute;
+
+  right: 1rem;
+  color: white;
+  cursor: pointer;
+  transform: none;
+  pointer-events: none;
+}
+.sort-options .sort-select-open {
+  display: block;
+}
+.sort-options {
+  position: absolute;
+  display: none;
+  background-color: #901C1C;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-radius: 0 0 6px 6px;
+}
+.sort-options li {
+  padding: 1.5rem;
+}
+.sort-options li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.625rem;
+  width: 9.375rem;
+  height: 1px;
+  background: white;
+}
+.sort-option {
+  position: relative;
+  padding: 1.5rem;
+}
+.sort-hide {
+  display: none;
+  border-radius: 6px 6px 6px 6px;
+}
+
+.sort-options li:not(.sort-hide) ~ li:not(.sort-hide) {
+  padding: 1.5rem;
+}
+
+  .closed {
+  border-radius: 6px;
+}
+
+ .opened {
+  border-radius: 6px 6px 0 0;
+}
+
+.lightbox-Modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  left: 0rem;
+  top: 0rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+}
+.lightbox-media {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin: 0 1em;
+}
+.lightbox-photo, .lightbox-video {
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  object-fit: cover;
+}
+.lightbox-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95%;
+}
+
+.lightbox-figure .lightbox-caption{
+  display: flex;
+  align-items: flex-start !important;
+}
+
+.lightbox-caption {
+  justify-items: flex-start;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  color: #901C1C;
+  font-size: 3rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.lightbox-close:focus-visible {
+  outline: solid 2px #901C1C;
+}
+
+.lightbox-previous-media, .lightbox-next-media {
+  font-size: 4rem;
+  border: none;
+  background-color: transparent;
+  color: #901C1C;
+  cursor: pointer;
+}
+
+.lightbox-previous-media {
+  position: absolute;
+  left: 5rem;
+}
+
+.lightbox-previous-media:focus-visible {
+  outline: solid 2px #901C1C;
+}
+
+.lightbox-next-media {
+  position: absolute;
+  right: 5rem;
+}
+
+.lightbox-next-media:focus-visible {
+  outline: solid 2px #901C1C;
+}
+
+.lightbox-caption {
+  font-size: 3rem;
+  color: #901C1C;
+  margin: 0.5em 0;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

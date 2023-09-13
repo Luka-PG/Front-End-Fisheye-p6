@@ -1,60 +1,79 @@
-
+//template de carde pour afficher les medias
 function galleryTemplate(sortedMedia) {
 
-    const { title, image, video ,price, likes, photographerId} = sortedMedia;
+    const {id, title, image, video ,price, date, likes, photographerId} = sortedMedia;
 
     const photographPath = `assets/photographers/${photographerId}/${image}`
     const videoPath = `assets/photographers/${photographerId}/${video}`
-    const heartButton = `assets/icons/empty-heart.svg`
     const iconeVideo = `assets/icons/Video.svg`
 
   function galleryCard() {
-    
-      const gallery = document.querySelector('.media-section');
-      // const sorting = document.createElement('div')
-      
-        const card = document.createElement('div');
-        card.setAttribute("class", 'mediaCard');
 
+    const gallery = document.querySelector('.media-section');
+     
+        const card = document.createElement('article');
+        card.classList.add( 'media-card');
+        card.id = id
         let photograph
 
-        if ( video != null ){
+        if ( video ){
             photograph = document.createElement('video');
                 photograph.setAttribute("src", videoPath);
                 photograph.setAttribute("alt", title);
+                photograph.classList.add( 'media-video');
+
             videoIcon = document.createElement('img');
+
                 videoIcon.setAttribute("src", iconeVideo);
-                videoIcon.setAttribute("class", 'videoIcon')
-                card.appendChild(videoIcon)
-        } else {
+                videoIcon.setAttribute("alt", 'ce média est une vidéo')
+                videoIcon.classList.add( 'video-icon');
+
+            const button = document.createElement("button");
+                    button.classList.add("media-btn");
+                    button.setAttribute("aria-label", `${title} - vue agrandie de la vidéo`);
+
+            card.appendChild(button);
+                button.appendChild(videoIcon);
+                button.appendChild(photograph);
+            
+        } else if ( image ) {
             photograph = document.createElement('img');
+                photograph.classList.add( 'media-img')
                 photograph.setAttribute("src", photographPath);
                 photograph.setAttribute("alt", title);
-            //  photograph.setAttribute(""onclick", function(lightbox) )
+
+            const button = document.createElement("button");
+                button.classList.add("media-btn");
+                button.setAttribute("aria-label", `${title} - vue agrandie de la photo`)
+
+            card.appendChild(button);
+                button.appendChild(photograph)
+
         }
         const cardInfo = document.createElement ('div');
-            cardInfo.setAttribute("class", 'cardInfo');
+            cardInfo.classList.add( 'card-info');
 
             const titles = document.createElement('p');
                 titles.textContent = title;
 
         const likeSection = document.createElement('div');
-            likeSection.setAttribute("class", 'likeSection');
+            likeSection.classList.add( 'like-section');
 
-                const likeCounter = document.createElement('span');
+                const likeCounter = document.createElement('p');
+                    likeCounter.classList.add( 'media-like-counter')
                     likeCounter.textContent = likes;
             
-            const likeButton = document.createElement('span');
-        //  likeButton.setAttribute("onclick", function() );
-                likeButton.setAttribute("class", 'likeButton');
-                likeButton.setAttribute("arial-label", "bouton J'aime");
+            const likeButton = document.createElement('div');
+                likeButton.classList.add( 'like-button');
+                likeButton.setAttribute("arial-label", `bouton J'aime de la photo ${title}`);
+        
             
-                const likeIcon = document.createElement('img');
-                    likeIcon.setAttribute("src", heartButton );
-                    likeIcon.setAttribute("class", 'likeIcon');
+                const likeIcon = document.createElement('span');
+                    likeIcon.classList.add('fa-regular', 'fa-heart', 'like-icon');
+                    likeIcon.setAttribute("aria-label", "icône j'aime")
+
 
         gallery.appendChild(card)
-          card.appendChild(photograph);
           card.appendChild(cardInfo);
             cardInfo.appendChild(titles);
             cardInfo.appendChild(likeSection)
@@ -63,5 +82,5 @@ function galleryTemplate(sortedMedia) {
                 likeButton.appendChild(likeIcon);
 
     }
-    return  galleryCard()
+    return { title, likes, date, galleryCard }
 }
