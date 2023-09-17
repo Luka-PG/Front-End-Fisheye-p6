@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 //on vient placer la template de portrait dans la section ou les photographes vont apparaître
 async function displayData(photographers) {

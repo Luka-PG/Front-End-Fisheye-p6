@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 //fonction qui trie les médias du photographe choisi en fonction du choix de l'utilisateur
 async function sortMediaCards() {
   const sortMenu = document.querySelector(".sort-button").innerText;
@@ -14,12 +16,12 @@ async function sortMediaCards() {
       case "Titre":
         SortByUserMedias = sortedMedia.sort(function(a,b) {
           if (a.title < b.title) {
-            return -1
+            return -1;
           }
           if (a.title > b.title) {
-            return 1
+            return 1;
           }
-          return 0
+          return 0;
         });
         break;  
       default:
@@ -30,6 +32,7 @@ async function sortMediaCards() {
 }
 
 //fonction pour créer des cards en fonction du tableau de médias trié ci-dessus
+// eslint-disable-next-line no-unused-vars
 async function sortedMediasCards() {
     const SortByUserMedias = await sortMediaCards();
 

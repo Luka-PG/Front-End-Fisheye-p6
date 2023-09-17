@@ -20,7 +20,7 @@ function renderLightboxModal() {
     });
 
   const formButton = document.querySelector(".contact-button");
-    formButton.setAttribute("tabindex", "-1")
+    formButton.setAttribute("tabindex", "-1");
     mainButtons.forEach(function(button) {
       button.setAttribute("tabindex", "-1");
     });
@@ -45,7 +45,7 @@ function closeLightboxModal() {
       button.setAttribute("tabindex", "0");
     });
   const formButton = document.querySelector(".contact-button");
-    formButton.setAttribute("tabindex", "0")
+    formButton.setAttribute("tabindex", "0");
     mainButtons.forEach(function(button) {
       button.setAttribute("tabindex", "0");
     });
@@ -60,21 +60,21 @@ function closeLightboxOnClick() {
   const closeBtn = document.querySelector(".lightbox-close");
   closeBtn.addEventListener("click", function() {
     const lightboxFigure = document.querySelector(".lightbox-figure");
-    if (lightboxFigure) {lightboxFigure.remove()}
+    if (lightboxFigure) {lightboxFigure.remove();}
       closeLightboxModal();
-    })
+    });
 }
 
 //possibilité de fermer le modal de lightbox avec le bouton "échap" du clavier
 function closeLightboxWithEsc() {
   document.addEventListener('keydown', event => {
-      const code = event.code
+      const code = event.code;
       if (lightboxModal.getAttribute('aria-hidden') == 'false' && code === "Escape") {
         const lightboxFigure = document.querySelector(".lightbox-figure");
-        if (lightboxFigure) {lightboxFigure.remove()}
-        closeLightboxModal()
+        if (lightboxFigure) {lightboxFigure.remove();}
+        closeLightboxModal();
       }
-  })
+  });
 }
 
 //cette fonction va venir désactiver les boutons "suivant" et "précedent" lorsque l'on arrive au début du tableau de médias ou à la fin
@@ -93,8 +93,9 @@ function disableLightboxButtons(index, mediasLength) {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 function initLightbox(){
-  disableLightboxButtons()
+  disableLightboxButtons();
   renderLightboxModal();
   closeLightboxOnClick();
   closeLightboxWithEsc();

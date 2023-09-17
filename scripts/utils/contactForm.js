@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 // fonction qui affiche le modal de contact et empêche la navigation au clavier des éléments cachés lorsque le modal est actif
 function displayModal() {
     const body = document.querySelector("body");
@@ -54,11 +57,11 @@ function closeModalOnEsc() {
     const modal = document.querySelector(".contact-modal");
 
     document.addEventListener('keydown', event => {
-        const code = event.code
+        const code = event.code;
         if (modal.getAttribute('aria-hidden') == 'false' && code === "Escape") {
-            closeModal()
+            closeModal();
         }
-    })
+    });
 }
 
 //fonction pour envoyer les informations rentrés dans la console lors du "submit" du form
@@ -81,13 +84,13 @@ function submitContactForm() {
         });
         form.reset();
         closeModal();
-    })
+    });
 }
 
 
 function initFormUtils() {
-    closeModalOnEsc()
-    submitContactForm()
+    closeModalOnEsc();
+    submitContactForm();
 }
 
-initFormUtils()
+initFormUtils();

@@ -1,11 +1,13 @@
+/* eslint-disable no-undef */
+
   // va afficher le photographe sur lequel on à cliqué sur la page index
    async function displayCurrentPhotographer() {
-    const {photographer} = await getCurrentPhotographer()
+    const {photographer} = await getCurrentPhotographer();
 
     const photographerHeader =  photographerTemplate(photographer);
     const photographerHeaderCard = photographerHeader.headerCard ();
 
-    return photographerHeaderCard
+    return photographerHeaderCard;
   }
   
 //fonction qui va afficher les médias en fonction de l'option de trie, initialiser la lightbox et le footer de like et le prix du photographe
@@ -18,7 +20,7 @@
     main.appendChild(mediaSection);
 
         await sortedMediasCards();
-        renderLightbox()
+        renderLightbox();
         renderLikeMedia();
   }
 
@@ -29,8 +31,8 @@
       option.addEventListener("click", async () => {
         document.querySelector(".media-section").remove();
         await displayMedia();
-      })
-    })
+      });
+    });
   }
 
 //va venir afficher les likes en dessous de chaques card affichés
@@ -47,21 +49,21 @@
           likeBtn.toggleAttribute("clicked");
           likeBtn.classList.toggle("fa-regular");
           likeBtn.classList.toggle("fa-solid");
-          likesNumber += 1
-          media.querySelector(".media-like-counter").innerText = likesNumber
+          likesNumber += 1;
+          media.querySelector(".media-like-counter").innerText = likesNumber;
 
         } else {
 
           likeBtn.toggleAttribute("clicked");
           likeBtn.classList.toggle("fa-regular");
           likeBtn.classList.toggle("fa-solid");
-          likesNumber -= 1
-          media.querySelector(".media-like-counter").innerText = likesNumber
+          likesNumber -= 1;
+          media.querySelector(".media-like-counter").innerText = likesNumber;
 
         }
-        updateLikes()
-      })
-    })
+        updateLikes();
+      });
+    });
   }
   
   // fonction qui permet de mettre à jour le nombre total de like
@@ -69,10 +71,10 @@
     const likes = document.querySelectorAll(".media-like-counter");
     const totalLikes = document.querySelector(".likes");
 
-    let total = 0
+    let total = 0;
 
     likes.forEach(like => total += parseInt(like.textContent));
-    totalLikes.textContent = total
+    totalLikes.textContent = total;
   }
 
 // affichage dans le footer des likes totales des médias du photographe et son prix
@@ -82,14 +84,14 @@
 
     let totalLikes = 0;
       sortedMedia.forEach(media => {
-        totalLikes += media.likes
+        totalLikes += media.likes;
       });
 
     const likesNb = document.querySelector(".likes");
       likesNb.innerText = totalLikes;
 
     const price = document.querySelector(".price");
-      price.innerText = `${photographer.price}€ / jour`
+      price.innerText = `${photographer.price}€ / jour`;
 
   }
 
@@ -119,7 +121,7 @@
         sort.querySelector("span").classList.remove("fa-caret-up");
         list.style.display = "none";
       }
-    })
+    });
   }
 
 //gestion de l'affichage du menu lors de la fermeture de celui ci
@@ -130,7 +132,7 @@
       sort.querySelector("span").classList.add("fa-caret-down");
       sort.querySelector("span").classList.remove("fa-caret-up");
       sort.classList.toggle("sort-select-open");
-      list.style.display = "none"
+      list.style.display = "none";
   }
 
   //gestion des options du menu lors de la fermeture du menu déroulant
@@ -145,7 +147,7 @@
     sort.classList.toggle("sort-select-open");
     button.classList.remove("opened");
     button.classList.add("closed");
-    list.style.display = "none"
+    list.style.display = "none";
   }
 
 //fonction pour gérer l'event de choix d'une option de tri
@@ -165,18 +167,18 @@
   
         options.forEach(option => {
           option.style.display = "block";
-          option.setAttribute("tabindex", "0")
+          option.setAttribute("tabindex", "0");
           option.setAttribute("aria-selected", "false");
-        })
+        });
 
         option.classList.add("sort-hide");
         option.setAttribute("aria-selected", "true");
-        option.setAttribute("tabindex", "-1")
+        option.setAttribute("tabindex", "-1");
         option.style.display = "none";
   
         closeOptionsList();
-      })
-    })
+      });
+    });
   }
   
   function initOptionsList() {
@@ -201,7 +203,7 @@
 
     if (media.image) {
       const figure = document.createElement("figure");
-        figure.classList.add("lightbox-figure")
+        figure.classList.add("lightbox-figure");
   
       const lightboxImg = document.createElement("img");
         lightboxImg.src = `./assets/photographers/${photographerId}/${image}`;
@@ -218,11 +220,11 @@
           
     } else if (media.video) {
       const figure = document.createElement("figure");
-        figure.classList.add("lightbox-figure")
+        figure.classList.add("lightbox-figure");
   
       const lightboxVideo = document.createElement("video");
         lightboxVideo.controls = "true";
-        lightboxVideo.classList.add("lightbox-video")
+        lightboxVideo.classList.add("lightbox-video");
    
       const lightboxVideoPath = document.createElement("source");
         lightboxVideoPath.src = `./assets/photographers/${photographerId}/${video}`;
@@ -239,7 +241,7 @@
           
           
     }
-    disableLightboxButtons(mediaIndex, SortByUserMedias.length)
+    disableLightboxButtons(mediaIndex, SortByUserMedias.length);
   }
   
     //fonction qui vient afficher le média suivant le média actuel et le retourne dans la lightbox
@@ -251,7 +253,7 @@
       if (currentMediaIndex < SortByUserMedias.length - 1) {
         let nextIndex = currentMediaIndex + 1;
         const nextMediaId = SortByUserMedias[nextIndex].id;
-        return nextMediaId
+        return nextMediaId;
       }
     }
     
@@ -264,7 +266,7 @@
       if (currentMediaIndex > 0) {
         let previousIndex = currentMediaIndex - 1;
         const previousMediaId = SortByUserMedias[previousIndex].id;
-        return previousMediaId
+        return previousMediaId;
       }
     }
  
@@ -276,33 +278,33 @@
 
       medias.forEach(media => {
         media.firstChild.addEventListener("click", async () => {
-          const mediaId = media.id
+          const mediaId = media.id;
           initLightbox();
           renderMedia(mediaId);
           nextMediaWithArrow();
           previousMediaWithArrow();
-      })
-    })
+      });
+    });
 
  // affichage du média suivant au click sur la flèche droite sur le clavier
  const next = document.querySelector(".lightbox-next-media");
  next.addEventListener("click", async () => {
    if (document.querySelector(".lightbox-figure")) {
-      document.querySelector(".lightbox-figure").remove()
-      const nextId = await findNextMedia()
+      document.querySelector(".lightbox-figure").remove();
+      const nextId = await findNextMedia();
         renderMedia(nextId);
    }
- })
+ });
 
  // affichage du média précedent au click sur la flèche gauche sur le clavier
  const previous = document.querySelector(".lightbox-previous-media");
  previous.addEventListener("click", async () => {
    if (document.querySelector(".lightbox-figure")) {
-      document.querySelector(".lightbox-figure").remove()
-      const previousId = await findPreviousMedia()
+      document.querySelector(".lightbox-figure").remove();
+      const previousId = await findPreviousMedia();
         renderMedia(previousId);
    }
- })
+ });
 }
 
 // fonction qui permet à l'utilisateur de passer au média suivant si il y à un média après celui séléctionné en appuyant sur la flèche droite sur le clavier
@@ -312,16 +314,16 @@ function nextMediaWithArrow() {
 
  document.addEventListener("keydown", async (event) => {
     if (next.style.display === "block") {
-      const code = event.code
+      const code = event.code;
       if (lightbox.getAttribute('aria-hidden') == 'false' && code === "ArrowRight") {
         if (document.querySelector(".lightbox-figure")) {
-          document.querySelector(".lightbox-figure").remove()
+          document.querySelector(".lightbox-figure").remove();
           const nextId = await findNextMedia();
-            renderMedia(nextId)
+            renderMedia(nextId);
        }
      }
    }
- })
+ });
 }
 
 // fonction qui permet à l'utilisateur de passer au média précédent si il y à un média après celui séléctionné en appuyant sur la flèche gauche sur le clavier
@@ -331,16 +333,16 @@ function nextMediaWithArrow() {
 
     document.addEventListener("keydown", async (event) => {
       if (previous.style.display === "block") {
-        const code = event.code
+        const code = event.code;
         if (lightbox.getAttribute('aria-hidden') == 'false' && code === "ArrowLeft") {
           if (document.querySelector(".lightbox-figure")) {
-            document.querySelector(".lightbox-figure").remove()
+            document.querySelector(".lightbox-figure").remove();
             const previousId = await findPreviousMedia();
-              renderMedia(previousId)
+              renderMedia(previousId);
           }
         }
       }
-    })
+    });
   }
 
 

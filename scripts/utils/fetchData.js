@@ -13,15 +13,17 @@
 
     const photographer = photographers.find(photographers => photographers.id === currentPhotographerid);
 
-    return {photographer, currentPhotographerid }
+    return {photographer, currentPhotographerid };
   }
 
 //fonction de trie des médias en fonction du photographe choisi
+
+  // eslint-disable-next-line no-unused-vars
   async function getMediaCurrentPhotographer() {
     const { media } = await getPhotographersData();
     const { currentPhotographerid } = await getCurrentPhotographer();
 
-    const sortedMedia = media.filter(media => media.photographerId === currentPhotographerid)
+    const sortedMedia = media.filter(media => media.photographerId === currentPhotographerid);
 
-    return sortedMedia
+    return sortedMedia;
   }

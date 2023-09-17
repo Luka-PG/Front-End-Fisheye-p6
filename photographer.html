@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <html lang="fr">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets//icons/favicon.png">
@@ -23,19 +24,19 @@
       </div>
 
       <section class="sort">
-        <p class="sort-label">Trier par</p>
-        <div class="sort-select sort-select-open" aria-label="dropdown" data-value="popularity">
+        <h3 class="sort-label">Trier par</h3>
+        <div class="sort-select sort-select-open" aria-label="menu pour trier les médias" data-value="popularity">
           
-          <button aria-expanded="false" id="sort-button" class="sort-button button closed">Popularité
+          <button aria-expanded="false" aria-label="trier par Popularité" id="sort-button" class="sort-button button closed">Popularité
             <span class="sort-down fa-solid fa-caret-down"></span>
           </button>
           
-          <div class="sort-options" role="list" aria-labelledby="sort-button" aria-activedescendant="popularity" style="display: none;">
+          <div class="sort-options" role="list" aria-activedescendant="popularity" style="display: none;">
             <button class="sort-optionBtn sort-option" data-value="popularity" id="popularity" aria-selected="true" style="display: none;" tabindex="-1" role="button">Popularité
             </button>
-            <button class="sort-optionBtn sort-option" data-value="date" id="date" tabindex="0" role="button">Date
+            <button class="sort-optionBtn sort-option" aria-label="trier par date" data-value="date" id="date" tabindex="0" role="button">Date
             </button>
-            <button class="sort-optionBtn sort-option" data-value="title" id="title" tabindex="0" role="button">Titre
+            <button class="sort-optionBtn sort-option" aria-label="trier par Titre" data-value="title" id="title" tabindex="0" role="button">Titre
             </button>
           </div>
        
@@ -45,11 +46,11 @@
     </main>
 
     <footer class="counter" aria-label="total des j'aimes et prix du photographe par jour">
-      <div class="counter-likes" aria-label="likes counter">
+      <div class="counter-likes" aria-label="compteur de j'aimes">
         <p class="likes"></p>
         <span class="fa-heart fa-solid heart-icon-counter ">
       </div>
-      <p class="price"></p>
+      <p class="price" aria-label="prix du photographe"></p>
     </footer>
 
 		<div class="contact-modal">
@@ -57,48 +58,44 @@
 
 				<header>
           <h2>Contactez-moi</h2>
-          <span class="close-contact fa-solid fa-x" onclick="closeModal()" alt="close contact page"/></span>
+          <span class="close-contact fa-solid fa-x" onclick="closeModal()" alt="fermer la fenêtre de contact"/></span>
         </header>
 
 				<div class="contact-form">
+    
+					<label>Prénom
+						<input aria-label="entrez votre Prénom" id="prenom"/>
+          </label>
 
-          <fieldset>
-						<label>Prénom</label>
-						<input aria-label="Prénom" id="prenom"/>
-          </fieldset>
+          <label>Nom
+            <input aria-label="entrez votre Nom"id="nom" />
+          </label>
 
-          <fieldset>
-            <label>Nom</label>
-            <input aria-label="Nom"id="nom" />
-          </fieldset>
+          <label>Email
+            <input aria-label="entrez votre Email"id="e-mail" />
+          </label>
 
-          <fieldset>  
-            <label>Email</label>
-            <input aria-label="Email"id="e-mail" />
-          </fieldset> 
+          <label>Votre message
+            <input class="message-input" aria-label="entrez votre Votre message" id="message" />
+          </label>
 
-          <fieldset>  
-            <label>Votre message</label>
-            <input class="message-input" aria-label="Votre message" id="message" />
-					</fieldset>
-
-          <button class="contact-button button submit">Envoyer</button>
+          <button class="contact-button button submit" aria-label="envoyer votre formulaire de contact">Envoyer</button>
         </div>
 			</form>
 		</div>
 		
-    <div class="lightbox-Modal" id="lightboxModal" aria-label="lightbox modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-Modal" id="lightboxModal" aria-label="visionneuse d'image" aria-hidden="true" role="dialog">
 
-      <button class="lightbox-previous-media" tabindex="1" aria-label="previous image">
+      <button class="lightbox-previous-media" tabindex="1" aria-label="image précédente">
         <span class="fa-solid fa-caret-left" role="button"></span>
       </button>
 
       <button
-        aria-label="close the close-up view of the selected media" class="lightbox-close"data-dismiss="lightboxModal" tabindex="3">
+        aria-label="fermer la visionneuse" class="lightbox-close"data-dismiss="lightboxModal" tabindex="3">
         <span class="fa-solid fa-xmark" role="button"></span>
       </button>
 
-      <button class="lightbox-next-media" tabindex="2" aria-label="next image">
+      <button class="lightbox-next-media" tabindex="2" aria-label="image suivante">
         <span class="fa-solid fa-caret-right" role="button"></span>
       </button>
 
