@@ -66,7 +66,7 @@
     });
   }
   
-  // fonction qui permet de mettre à jour le nombre total de like
+  // fonction qui permet de mettre à jour le nombre de likes des medias
   function updateLikes() {
     const likes = document.querySelectorAll(".media-like-counter");
     const totalLikes = document.querySelector(".likes");
@@ -77,7 +77,7 @@
     totalLikes.textContent = total;
   }
 
-// affichage dans le footer des likes totales des médias du photographe et son prix
+// affichage dans le footer du total des likes des médias du photographe et son prix
   async function renderLikesCounter() {
     const {photographer} = await getCurrentPhotographer();
     const sortedMedia = await getMediaCurrentPhotographer();
