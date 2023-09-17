@@ -1,6 +1,4 @@
-# Base de code du projet P6 - Parcours Front-end
+# code pour le projet 6 - site accessible pour une plateforme de photographes
 
-## Démarrer le projet
-
-Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
+lien du site live : https://luka-pg.github.io/Front-End-Fisheye-p6/index.html
 
