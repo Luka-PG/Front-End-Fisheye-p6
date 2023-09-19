@@ -24,15 +24,15 @@
       </div>
 
       <section class="sort">
-        <h3 class="sort-label">Trier par</h3>
-        <div class="sort-select sort-select-open" aria-label="menu pour trier les médias" data-value="popularity">
+        <h3 class="sort-label" aria-label="menu de tri des medias" tabindex="0">Trier par</h3>
+        <div class="sort-select sort-select-open" data-value="popularity">
           
-          <button aria-expanded="false" aria-label="trier par Popularité" id="sort-button" class="sort-button button closed">Popularité
+          <button aria-expanded="false" id="sort-button" class="sort-button button closed">Popularité
             <span class="sort-down fa-solid fa-caret-down"></span>
           </button>
           
           <div class="sort-options" role="list" aria-activedescendant="popularity" style="display: none;">
-            <button class="sort-optionBtn sort-option" data-value="popularity" id="popularity" aria-selected="true" style="display: none;" tabindex="-1" role="button">Popularité
+            <button class="sort-optionBtn sort-option" aria-label="trier par Popularité" data-value="popularity" id="popularity" aria-selected="true" style="display: none;" tabindex="-1" role="button">Popularité
             </button>
             <button class="sort-optionBtn sort-option" aria-label="trier par date" data-value="date" id="date" tabindex="0" role="button">Date
             </button>
