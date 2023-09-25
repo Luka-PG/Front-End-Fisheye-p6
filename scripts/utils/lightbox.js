@@ -7,7 +7,7 @@ const mainButtons = main.querySelectorAll("button");
 const a = document.querySelector("a");
 
 // la fonction va venir afficher la lightbox en passant son aria-hidden à false et celui du reste de la page en aria-hidden true pour que ça ne soit pas pris en compte par les lecteurs d'écran, on passe aussitous les élements extérieurs à la modale en tabindex = -1 afin de ne pas pouvoir naviguer dessus à l'aide du clavier lorsque la modale est active
-function renderLightboxModal() {
+function displayLightboxModal() {
   main.setAttribute("aria-hidden", "true");
   header.setAttribute("aria-hidden", "true");
   footer.setAttribute("aria-hidden", "true");
@@ -96,7 +96,7 @@ function disableLightboxButtons(index, mediasLength) {
 // eslint-disable-next-line no-unused-vars
 function initLightbox(){
   disableLightboxButtons();
-  renderLightboxModal();
+  displayLightboxModal();
   closeLightboxOnClick();
   closeLightboxWithEsc();
 }

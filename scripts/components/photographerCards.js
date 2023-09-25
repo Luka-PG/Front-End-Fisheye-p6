@@ -3,7 +3,6 @@
   //on vient nommer les valeurs que l'on va utiliser
 function photographerTemplate(data) {
     const { name, portrait, city, country,tagline ,price, id} = data;
-    console.log(data);
     // fetch du portrait en fonction du photographe
     const picture = `assets/photographers/Photographers_ID_Photos/${portrait}`;
 

@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <html lang="fr">
+    <title>Fisheye - photographe </title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets//icons/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-    <title>Fisheye - photographe </title>
   </head>
   <body>
 
@@ -24,6 +22,7 @@
       </div>
 
       <section class="sort">
+        
         <h3 class="sort-label" aria-label="menu de tri des medias" tabindex="0">Trier par</h3>
         <div class="sort-select sort-select-open" data-value="popularity">
           
@@ -31,72 +30,84 @@
             <span class="sort-down fa-solid fa-caret-down"></span>
           </button>
           
-          <div class="sort-options" role="list" aria-activedescendant="popularity" style="display: none;">
-            <button class="sort-optionBtn sort-option" aria-label="trier par Popularité" data-value="popularity" id="popularity" aria-selected="true" style="display: none;" tabindex="-1" role="button">Popularité
+          <div class="sort-options" role="list" style="display: none;">
+
+            <button class="sort-optionBtn sort-option" aria-label="trier par Popularité" data-value="popularity" id="popularity"  style="display: none;" tabindex="-1" type="button">Popularité
             </button>
-            <button class="sort-optionBtn sort-option" aria-label="trier par date" data-value="date" id="date" tabindex="0" role="button">Date
+
+            <button class="sort-optionBtn sort-option" aria-label="trier par date" data-value="date" id="date" tabindex="0">Date
             </button>
-            <button class="sort-optionBtn sort-option" aria-label="trier par Titre" data-value="title" id="title" tabindex="0" role="button">Titre
+
+            <button class="sort-optionBtn sort-option" aria-label="trier par Titre" data-value="title" id="title" tabindex="0">Titre
             </button>
+
           </div>
        
         </div>
+
       </section>
 
     </main>
 
     <footer class="counter" aria-label="total des j'aimes et prix du photographe par jour">
-      <div class="counter-likes" aria-label="compteur de j'aimes">
+
+      <div class="counter-likes">
         <p class="likes"></p>
-        <span class="fa-heart fa-solid heart-icon-counter ">
+        <span class="fa-heart fa-solid heart-icon-counter "></span>
       </div>
-      <p class="price" aria-label="prix du photographe"></p>
+
+      <p class="price"></p>
+
     </footer>
 
 		<div class="contact-modal">
       <form class="form">
 
 				<header>
+
           <h2>Contactez-moi</h2>
-          <span class="close-contact fa-solid fa-x" onclick="closeModal()" alt="fermer la fenêtre de contact"/></span>
+          <span class="close-contact fa-solid fa-x" onclick="closeModal()"></span>
+
         </header>
 
 				<div class="contact-form">
     
-					<label>Prénom
+					<label for="prenom">Prénom
 						<input aria-label="entrez votre Prénom" id="prenom"/>
           </label>
 
-          <label>Nom
-            <input aria-label="entrez votre Nom"id="nom" />
+          <label for="nom">Nom
+            <input aria-label="entrez votre Nom" id="nom" />
           </label>
 
-          <label>Email
-            <input aria-label="entrez votre Email"id="e-mail" />
+          <label for="e-mail">Email
+            <input aria-label="entrez votre Email" id="e-mail" />
           </label>
 
-          <label>Votre message
+          <label for="message">Votre message
             <input class="message-input" aria-label="entrez votre Votre message" id="message" />
           </label>
 
           <button class="contact-button button submit" aria-label="envoyer votre formulaire de contact">Envoyer</button>
+
         </div>
+        
 			</form>
 		</div>
 		
     <div class="lightbox-Modal" id="lightboxModal" aria-label="visionneuse d'image" aria-hidden="true" role="dialog">
 
       <button class="lightbox-previous-media" tabindex="1" aria-label="image précédente">
-        <span class="fa-solid fa-caret-left" role="button"></span>
+        <span class="fa-solid fa-caret-left"></span>
       </button>
 
       <button
-        aria-label="fermer la visionneuse" class="lightbox-close"data-dismiss="lightboxModal" tabindex="3">
-        <span class="fa-solid fa-xmark" role="button"></span>
+        aria-label="fermer la visionneuse" class="lightbox-close" data-dismiss="lightboxModal" tabindex="3">
+        <span class="fa-solid fa-xmark"></span>
       </button>
 
       <button class="lightbox-next-media" tabindex="2" aria-label="image suivante">
-        <span class="fa-solid fa-caret-right" role="button"></span>
+        <span class="fa-solid fa-caret-right"></span>
       </button>
 
     </div>
